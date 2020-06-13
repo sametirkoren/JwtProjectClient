@@ -1,17 +1,20 @@
 @model AppUserLogin
-<form method="post" class="w-75 mx-auto p-3 mt-4" action="">
+<form method="post" class="w-75 mx-auto p-3 mt-4">
     <div class="form-group">
-        <label asp-for="UserName"></label>
+        <label >Kullanıcı Adı : </label>
+        <span asp-validation-for="@Model.UserName"></span>
         <input asp-for="@Model.UserName"  class="form-control" type="text" >
     </div>
 
     <div class="form-group">
-        <label asp-for="Password"></label>
+        <label>Şifre : </label>
+        <span asp-validation-for="@Model.Password"></span>
         <input asp-for="@Model.Password"  class="form-control" type="text" >
     </div>
     <div class="form-group">
-         <button class="btn btn-primary btn-sm" type="submit">Giriş Yap</button>
+         <button class="btn btn-primary btn-sm" asp-action="SignIn" asp-controller="Account" type="submit">Giriş Yap</button>
          <a class="btn btn-primary btn-sm" asp-action="SignUp" asp-controller="Account">Kayıt Ol</a>
+         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     </div>
 
    
