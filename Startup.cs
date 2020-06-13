@@ -19,6 +19,7 @@ namespace JwtProjectClient
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IAuthService,AuthManager>();
+             services.AddScoped<IProductApiService,ProductApiManager>();
             services.AddHttpContextAccessor();
             services.AddSession();
             services.AddControllersWithViews();
