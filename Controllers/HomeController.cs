@@ -47,5 +47,10 @@ namespace JwtProjectClient.Controllers
             return View(productList);
             
         }
+
+        public async Task<IActionResult> Delete(int id){
+            await _productApiService.DeleteAsync(id);
+            return RedirectToAction("Index","Home");
+        }
     }
 }

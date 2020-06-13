@@ -12,5 +12,7 @@ namespace JwtProjectClient.ApiServices.Interfaces
          Task<ProductList> GetByIdAsync(int id);
 
          Task UpdateAsync(ProductList productList);
+
+         Task DeleteAsync(int id);
     }
 }

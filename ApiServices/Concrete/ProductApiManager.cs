@@ -33,6 +33,17 @@ namespace JwtProjectClient.ApiServices.Concrete
             }
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var token = _accessor.HttpContext.Session.GetString("token");
+
+            if(!string.IsNullOrWhiteSpace(token)){
+                using var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",token);
+                await httpClient.DeleteAsync($"http://localhost:54702/api/products/{id}");
+            }
+        }
+
         public async Task<List<ProductList>> GetAllAsync()
         {
             var token = _accessor.HttpContext.Session.GetString("token");
