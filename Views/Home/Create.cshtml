@@ -1,0 +1,11 @@
+@model ProductAdd
+<form asp-action="Create" asp-controller="Home" method="POST" class="mx-auto mt-4 w-50 p-3">
+    <div class="form-group">
+        <label for="Name">Ürün Adı : </label>
+        <span asp-validation-for="Name"></span>
+        <input asp-for="Name" class="form-control" type="text">
+    </div>
+
+    <button type="submit" class="btn btn-info btn-sm">Kaydet</button>
+    <a asp-action="Index" asp-control="Home" class="btn btn-warning btn-sm">Vazgeç</a>
+</form>

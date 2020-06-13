@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using JwtProjectClient.ApiServices.Interfaces;
+using JwtProjectClient.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JwtProjectClient.Controllers
@@ -15,6 +16,19 @@ namespace JwtProjectClient.Controllers
 
         public async Task<IActionResult> Index(){
             return View(await _productApiService.GetAllAsync());
+        }
+        
+        public  IActionResult Create(){
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ProductAdd productAdd){
+            if(ModelState.IsValid){
+                await _productApiService.AddAsync(productAdd);
+                return RedirectToAction("Index","Home");
+            }
+            return View(productAdd);
         }
     }
 }

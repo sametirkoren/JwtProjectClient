@@ -7,5 +7,6 @@ namespace JwtProjectClient.ApiServices.Interfaces
     public interface IProductApiService
     {
          Task<List<ProductList>> GetAllAsync();
+         Task AddAsync (ProductAdd productAdd);
     }
 }

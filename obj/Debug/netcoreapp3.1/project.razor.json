@@ -20536,6 +20536,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\vakidev\\Desktop\\JwtProjectClient\\Views\\Home\\Create.cshtml",
+      "TargetPath": "Views\\Home\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\vakidev\\Desktop\\JwtProjectClient\\Views\\Account\\SignIn.cshtml",
       "TargetPath": "Views\\Account\\SignIn.cshtml",
       "FileKind": "mvc"
