@@ -20521,8 +20521,23 @@
   "RootNamespace": "JwtProjectClient",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\vakidev\\Desktop\\JwtProjectClient\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\vakidev\\Desktop\\JwtProjectClient\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\vakidev\\Desktop\\JwtProjectClient\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\vakidev\\Desktop\\JwtProjectClient\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],
