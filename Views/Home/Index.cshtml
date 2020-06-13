@@ -2,12 +2,16 @@
 
 
 @if ( Model!=null){
+    <a asp-action="Create" class="btn btn-primary btn-sm my-2">Yeni Ürün Ekle</a>
 <table class="table  table-sm table-bordered">
     <tbody>
         @foreach(var item in Model){
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Düzenle</a>
+                </td>
             </tr>
         }
        

@@ -48,5 +48,36 @@ namespace JwtProjectClient.ApiServices.Concrete
             }
             return null;
         }
+
+        public async Task<ProductList> GetByIdAsync(int id)
+        {
+            var token = _accessor.HttpContext.Session.GetString("token");
+            if(!string.IsNullOrWhiteSpace(token)){
+                using var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",token);
+
+                var responseMessage = await httpClient.GetAsync($"http://localhost:54702/api/products/{id}");
+
+                if(responseMessage.IsSuccessStatusCode){
+                    var product = JsonConvert.DeserializeObject<ProductList>(await responseMessage.Content.ReadAsStringAsync());
+                    return product;
+                }
+            }
+            return null;
+        }
+
+        public async Task UpdateAsync(ProductList productList)
+        {
+             var token = _accessor.HttpContext.Session.GetString("token");
+            if(!string.IsNullOrWhiteSpace(token)){
+                using var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",token);
+                var jsonData = JsonConvert.SerializeObject(productList);
+                var stringContent = new StringContent(jsonData , Encoding.UTF8,"application/json");
+                await httpClient.PutAsync("http://localhost:54702/api/products",stringContent);
+            
+            }
+
+        }
     }
 }

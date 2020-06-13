@@ -30,5 +30,22 @@ namespace JwtProjectClient.Controllers
             }
             return View(productAdd);
         }
+
+        public async Task<IActionResult> Edit(int id){
+           
+            return View(await _productApiService.GetByIdAsync(id));
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProductList productList){
+           
+            if(ModelState.IsValid){
+                await _productApiService.UpdateAsync(productList);
+                return RedirectToAction("Index","Home");
+            }
+            return View(productList);
+            
+        }
     }
 }

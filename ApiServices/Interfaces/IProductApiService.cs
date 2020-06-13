@@ -8,5 +8,9 @@ namespace JwtProjectClient.ApiServices.Interfaces
     {
          Task<List<ProductList>> GetAllAsync();
          Task AddAsync (ProductAdd productAdd);
+
+         Task<ProductList> GetByIdAsync(int id);
+
+         Task UpdateAsync(ProductList productList);
     }
 }
