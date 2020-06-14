@@ -1,7 +1,6 @@
 @model List<ProductList>
 
 
-@if ( Model!=null){
     <a asp-action="Create" class="btn btn-primary btn-sm my-2">Yeni Ürün Ekle</a>
 <table class="table  table-sm table-bordered">
     <tbody>
@@ -18,9 +17,3 @@
        
     </tbody>
 </table>
-
-  
-}else{
-    <h4>Authorization Hatası</h4>
-    <a asp-action="SignIn" asp-controller="Account">Giriş Yap</a>
-}
