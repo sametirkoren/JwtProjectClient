@@ -11,6 +11,7 @@ namespace JwtProjectClient.Builders.Concrete
             if (activeUser.Roles.Contains(roles))
             {
                 status.AccessStatus = true;
+                
             }
 
             return status;
